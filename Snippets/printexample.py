@@ -3,10 +3,10 @@ print ("Hey, you!")
 
 print ("Hello!")
 
-print ('Hey ' + 'Ana!')
+print ('Hey ' + 'Ana! ')
 
-ans = 6
-solution = "The product was " + str(ans)
+ans = 13
+solution = "The product is " + str(ans)
 print (solution)
 
 #variable prints
