@@ -3,7 +3,7 @@ print ("Hey, you!")
 
 print ("Hello!")
 
-print ('Hey ' + 'Daniel!')
+print ('Hey ' + 'Ana!')
 
 ans = 6
 solution = "The product was " + str(ans)
