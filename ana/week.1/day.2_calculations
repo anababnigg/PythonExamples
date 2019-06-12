@@ -1,0 +1,38 @@
+
+#to find average of 2 numbers
+def average(num1, num2):
+	avg = (num1 + num2) / 2
+	return avg
+
+#calculator of powers (10 here)
+def tenth_power(num):
+	return num ** 10
+
+#sqrt calculator
+def square_root(num):
+	sqrt = num ** (1/2)
+	return sqrt
+
+#tip calculator
+def tip(total, percentage):
+	tt = total * (percentage / 100)
+	return tt
+print(tip(100, 10))
+
+#percentage calculator
+def percentage(want, other):
+	pc = (want / (want + other)) * 100
+	return pc
+
+#multiples calculator
+def first_three_multiples(num):
+	print(num * 1)
+	print(num * 2)
+	print(num * 3)
+	return num * 3
+
+#dog age calculator
+def dog_years(name, age):
+	dog_age = age * 7
+	return str(name) + ", you are " + str(dog_age) + " years old in dog years"
+
