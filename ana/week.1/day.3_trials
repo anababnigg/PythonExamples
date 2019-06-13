@@ -1,0 +1,49 @@
+#Control Flow
+#TRY AND EXCEPT
+def raises_value_error():
+  raise ValueError
+  
+try:
+  raises_value_error()
+except ValueError:
+  print("You raised a ValueError!")
+
+#TRUE & FALSE BOOLEANS
+def in_range(num, lower, upper):
+  if num >= lower and num <= upper:
+    return True
+  else:
+    return False
+
+
+#REVIEW
+def applicant_selector(gpa, ps_score, ec_count):
+  if (gpa >= 3.0) and (ps_score >= 90) and (ec_count >= 3):
+    return "This applicant should be accepted."
+  elif (gpa >= 3.0) and (ps_score >= 90) and (ec_count < 3):
+    return "This applicant should be given an in-person interview."
+  else:
+    return "This applicant should be rejected."
+
+#lists
+
+#ZIP COMMAND
+names = ['Jenny', 'Alexus', 'Sam', 'Grace']
+dogs_names = ['Elphonse', 'Dr. Doggy DDS', 'Carter', 'Ralph']
+names_and_dogs_names = zip(names, dogs_names)
+list_of_names_and_dogs_names = list(names_and_dogs_names)
+print(list_of_names_and_dogs_names)
+
+#APPEND COMMAND
+orders = ['daisies', 'periwinkle']
+orders.append('tulips')
+orders.append('roses')
+print(orders)
+
+#REVIEW
+first_names = ['Ainsley', 'Ben', 'Chani', 'Depak']
+age = []
+age.append(42)
+all_ages = age + [32, 41, 29]
+name_and_age = zip(all_ages, first_names)
+ids = range(0, 4)

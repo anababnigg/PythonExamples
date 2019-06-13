@@ -1,0 +1,51 @@
+#This guide shows the pricing at best options for shipping by drone, ground, and premium ground shipping.
+
+def ng_shipping(weight):
+  if weight <= 2:
+    cost = (weight * 1.50) + 20
+    return cost
+  elif (2 < weight <= 6):
+    cost = (weight * 3) + 20 
+    return cost
+  elif (6 < weight <= 10):
+    cost = (weight * 4) + 20
+    return cost
+  else:
+    cost = (weight * 4.75) + 20
+    return cost
+  
+pg_shipping = 125
+
+def d_shipping(weight):
+  if weight <= 2:
+    cost = (weight * 4.50)
+    return cost
+  elif (2 < weight <= 6):
+    cost = (weight * 9)
+    return cost
+  elif (6 < weight <= 10):
+    cost = (weight * 12)
+    return cost
+  else:
+    cost = (weight * 14.25)
+    return cost
+
+def cheapest_shipping(weight):
+  ground = ng_shipping(weight)
+  premium = pg_shipping
+  drone = d_shipping(weight)
+  
+  if ground < premium and ground < drone:
+    method = "standard ground"
+    cost = ground
+  elif premium < ground and premium < drone:
+    method = "premium"
+    cost = premium
+  else:
+    method = "drone"
+    cost = drone
+  print("The cheapest option available is " + str(method) + " with a cost of " + "$" + str(cost))
+
+#test  
+print(cheapest_shipping(4.8))
+print(cheapest_shipping(41.5))
