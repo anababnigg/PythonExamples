@@ -1,0 +1,120 @@
+#STRINGS
+
+love_maybe_lines = ['Always    ', '     in the middle of our bloodiest battles  ', 'you lay down your arms', '           like flowering mines    ','\n' ,'   to conquer me home.    ']
+love_maybe_lines_stripped = []
+for line in love_maybe_lines:
+  love_maybe_lines_stripped.append(line.strip())
+  love_maybe_full = '\n'.join(love_maybe_lines_stripped)
+print(love_maybe_full)
+
+def poem_description(publishing_date, author, title, original_work):
+  poem_desc = "The poem {title} by {author} was originally published in {original_work} in {publishing_date}.".format(publishing_date=publishing_date, author=author, title=title, original_work=original_work)
+  return poem_desc
+
+#REVIEW
+highlighted_poems = "Afterimages:Audre Lorde:1997,  The Shadow:William Carlos Williams:1915, Ecstasy:Gabriela Mistral:1925,   Georgia Dusk:Jean Toomer:1923,   Parting Before Daybreak:An Qi:2014, The Untold Want:Walt Whitman:1871, Mr. Grumpledump's Song:Shel Silverstein:2004, Angel Sound Mexico City:Carmen Boullosa:2013, In Love:Kamala Suraiyya:1965, Dream Variations:Langston Hughes:1994, Dreamwood:Adrienne Rich:1987"
+
+# print(highlighted_poems)
+
+highlighted_poems_list = highlighted_poems.split(',')
+
+# print(highlighted_poems_list)
+
+highlighted_poems_stripped = []
+
+for poem in highlighted_poems_list:
+  highlighted_poems_stripped.append(poem.strip())
+  
+# print(highlighted_poems_stripped)
+
+highlighted_poems_details = []
+
+for poem in highlighted_poems_stripped:
+  highlighted_poems_details.append(poem.split(':'))
+  
+titles = []
+poets = []
+dates = []
+
+for poem in highlighted_poems_details:
+  titles.append(poem[0])
+  poets.append(poem[1])
+  dates.append(poem[2])
+  
+for i in range(0,len(highlighted_poems_details)):
+    print('The poem {} was published by {} in {}'.format(titles[i], poets[i], dates[i]))
+
+
+
+
+
+def count_char_x(word, x):
+  occurrences = 0
+  for letter in word:
+    if letter == x:
+      occurrences += 1
+  return occurrences
+
+def count_multi_char_x(word, x):
+  splits = word.split(x)
+  return(len(splits)-1)
+
+def substring_between_letters(word, start, end):
+  start_ind = word.find(start)
+  end_ind = word.find(end)
+  if start_ind > -1 and end_ind > -1:
+  	return(word[start_ind+1:end_ind])
+  return word
+
+def x_length_words(sentence, x):
+  words = sentence.split()
+  for word in words:
+    if len(word) < x:
+    	return False
+  return True
+
+def check_for_name(sentence, name):
+  return name.lower() in sentence.lower()
+
+def every_other_letter(word):
+  every_other = ""
+  for i in range(0, len(word), 2):
+    every_other += word[i]
+  return every_other
+
+def reverse_string(word):
+  reverse = ""
+  for i in range(len(word)-1, -1, -1):
+    reverse += word[i]
+  return reverse
+
+def make_spoonerism(word1, word2):
+  spoon = word2[0] + word1[1:] + " " + word1[0] + word2[1:]
+  return spoon
+
+def add_exclamation(word):
+  while len(word) < 20:
+    word += ('!')
+    if len(word) < 20:
+      continue
+    if len(word) == 20:
+    	break
+    return word
+  return word
+
+
+
+
+#MODULES
+
+from matplotlib import pyplot as plt
+import random
+numbers_a = range(1, 13)
+numbers_b = random.sample(range(1000), 12)
+plt.plot(numbers_a, numbers_b)
+plt.show() 
+
+
+from decimal import Decimal
+two_decimal_points = Decimal('0.2') + Decimal('0.69')
+print(two_decimal_points)
