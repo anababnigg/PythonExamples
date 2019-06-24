@@ -1,0 +1,63 @@
+#input_point_a = input('enter Point A in (x,y,z) form:')
+#point_a = input_point_a.split(',')
+
+#following code is incorrect
+input_point_b = input('enter Point B as (bx,by,bz):')
+point_b = input_point_b.split(',')
+
+print("point b is:")
+ptb_lst = []
+for num in point_b:
+  ptb_lst.append(int(num))
+  if len(ptb_lst) == 3:
+    print(list(ptb_lst))
+    
+#ptb_lst[0] = ptc_lst[1] = ptd_lst[2]
+#ptb_lst[1] = ptc_lst[0]
+#ptb_lst[2] = ptc_lst[2] = ptd_lst[0] = ptd_lst[1]
+
+print('point c is:')
+ptc_lst = [ptb_lst[1], ptb_lst[0], ptb_lst[2]]
+print(ptc_lst)
+
+print('point d is:')
+ptd_lst = [ptb_lst[2], ptb_lst[2], ptb_lst[0]]
+print(ptd_lst)
+
+point_a = [0,0,0]
+print('point a is:')
+print(point_a)
+
+#make a code that user inputs b and c and returns d
+#to check if code works, use b(1000,10,10) and c(-10,1000,100)
+
+point_a = [0,0,0]
+print('Point A:')
+print(point_a)
+
+input_point_b = input("Enter Point B as (bx,by,bz):")
+point_b = input_point_b.split(',')
+print("Point B:")
+ptb_lst = []
+for num in point_b:
+  ptb_lst.append(int(num))
+  if len(ptb_lst) == 3:
+    print(list(ptb_lst))
+
+input_point_c = input("Enter Point C as (cx,cy,cz):")
+point_c = input_point_c.split(',')
+print("Point C:")
+ptc_lst = []
+for num in point_c:
+  ptc_lst.append(int(num))
+  if len(ptc_lst) == 3 and ptb_lst[1] == -(ptc_lst[0]):
+    print(list(ptc_lst))
+if ptb_lst[1] != -(ptc_lst[0]):
+  print("ERROR: value cx should be equivelent to opposite of value of by.")
+if ptb_lst[0] != ptc_lst[1]:
+    print("ERROR: value bx and cy should be equivelent.")
+    
+print("Point D:")
+if ptb_lst[1] == -(ptc_lst[0]) and ptb_lst[0] == ptc_lst[1]:
+  point_d = [-(ptb_lst[2]), -(ptc_lst[2]), ptb_lst[0]]
+  print(point_d)
