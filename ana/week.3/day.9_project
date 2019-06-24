@@ -30,6 +30,7 @@ print(point_a)
 
 #make a code that user inputs b and c and returns d
 #to check if code works, use b(1000,10,10) and c(-10,1000,100)
+#hello
 
 point_a = [0,0,0]
 print('Point A:')
